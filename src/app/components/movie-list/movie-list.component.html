@@ -1,0 +1,19 @@
+<div class="movies">
+  <ul>
+    @for (movie of movies$ | async; track $index) {
+    <li>
+      <div class="wrapper">
+        <span class="title">{{ movie.title }}</span>
+        <div class="info">
+          <span
+            >Release date: {{ movie.release_date | date : "yyyy-MM-dd" }}</span
+          >
+          <span>Budget: {{ movie.budget | customCurrency }}</span>
+          <span>Duration: {{ +movie.duration | durationFormat }}</span>
+        </div>
+        <button id="{{ movie.id }}" class="btn">Details</button>
+      </div>
+    </li>
+    } @empty { Empty list of movies }
+  </ul>
+</div>
