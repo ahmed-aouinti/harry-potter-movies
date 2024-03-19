@@ -1,19 +1,26 @@
-<div class="movies">
-  <ul>
-    @for (movie of movies$ | async; track $index) {
-    <li>
-      <div class="wrapper">
-        <span class="title">{{ movie.title }}</span>
-        <div class="info">
-          <span
-            >Release date: {{ movie.release_date | date : "yyyy-MM-dd" }}</span
-          >
-          <span>Budget: {{ movie.budget | customCurrency }}</span>
-          <span>Duration: {{ +movie.duration | durationFormat }}</span>
+<div class="container">
+  <div class="filter-wrapper">
+    <h3>Filters</h3>
+    <label>Title</label>
+    <input type="text" [formControl]="titleFilterControl" />
+    <label>Release year</label>
+    <input type="number" [formControl]="releaseYearFilterControl" />
+  </div>
+  <div class="movies-wrapper">
+    <ul>
+      @for (movie of movies$ | async; track $index) {
+      <li>
+        <div class="content-wrapper">
+          <span class="title">{{ movie.title }}</span>
+          <div class="info">
+            <span>Release date: {{ movie.release_date }}</span>
+            <span>Budget: {{ movie.budget | customCurrency }}</span>
+            <span>Duration: {{ +movie.duration | durationFormat }}</span>
+          </div>
+          <button id="{{ movie.id }}" class="btn">Details</button>
         </div>
-        <button id="{{ movie.id }}" class="btn">Details</button>
-      </div>
-    </li>
-    } @empty { Empty list of movies }
-  </ul>
+      </li>
+      } @empty { Movies don't found }
+    </ul>
+  </div>
 </div>
