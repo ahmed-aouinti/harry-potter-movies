@@ -6,6 +6,7 @@ import { DurationFormatPipe } from 'src/app/common/duration-format.pipe';
 import { Observable, combineLatest, map, startWith } from 'rxjs';
 import { CustomCurrencyPipe } from '../../common/custom-currency.pipe';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -17,6 +18,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     DurationFormatPipe,
     CustomCurrencyPipe,
     ReactiveFormsModule,
+    RouterLink,
   ],
 })
 export class MovieListComponent implements OnInit {

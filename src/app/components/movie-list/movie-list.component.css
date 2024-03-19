@@ -1,11 +1,9 @@
 .container {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 50rem;
+  margin: 1.2rem auto;
+  padding: 0 1.2rem;
 }
 .filter-wrapper {
-  width: 48rem;
   margin: 0rem 0rem 1.2rem 1.8rem;
   padding: 1.2rem 1.2rem 2.4rem 1.2rem;
   background-color: #ced4da;
@@ -16,9 +14,7 @@ input {
   margin: 0 0.8rem;
   padding-left: 1rem;
 }
-.movies-wrapper {
-  max-width: 64rem;
-}
+
 .content-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

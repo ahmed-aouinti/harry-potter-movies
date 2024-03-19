@@ -17,7 +17,13 @@
             <span>Budget: {{ movie.budget | customCurrency }}</span>
             <span>Duration: {{ +movie.duration | durationFormat }}</span>
           </div>
-          <button id="{{ movie.id }}" class="btn">Details</button>
+          <button
+            id="{{ movie.id }}"
+            class="btn"
+            routerLink="/movies/{{ movie.id }}"
+          >
+            Details
+          </button>
         </div>
       </li>
       } @empty { Movies don't found }
